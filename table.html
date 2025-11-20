@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Three.js Data Viewer</title>
+<style>
+  body { margin: 0; overflow: hidden; background: #000; font-family: sans-serif; color: #fff; }
+  #container { position: absolute; width: 100%; height: 100%; }
+
+  .element {
+    width: 140px;
+    height: 180px;
+    position: absolute;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    font-weight: bold;
+    cursor: default;
+    border: 5px solid #fff;
+    background-color: rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .element .top-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    font-size: 12px;
+    color: #fff;
+  }
+
+  .element .photo {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+  }
+
+  .element .bottom-row {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .controls button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .controls button:hover { background-color: rgba(255,255,255,0.2); }
+
+  .color-bar {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    height: 20px;
+    background: linear-gradient(to right, #ef3022, #f04c34, #f26132, #f47f30, #f68f32, #f99d31, #fdba36, #fdca35, #ffd93b, #eee937, #d5df31, #b0ce34, #7cb643, #5dab46, #3a9f48);
+    border-radius: 4px;
+    border: 1px solid #fff;
+  }
+
+</style>
+</head>
+<body>
+<div id="container"></div>
+
+<div class="controls">
+  <button id="btnTable">Table</button>
+  <button id="btnSphere">Sphere</button>
+  <button id="btnHelix">Helix</button>
+  <button id="btnGrid">Grid</button>
+</div>
+<div class="color-bar"></div>
+
+<script type="module" src="table.js"></script>
+</body>
+</html>
