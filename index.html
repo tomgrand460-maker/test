@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+
+  <!-- Google Client ID -->
+  <meta name="google-signin-client_id"
+        content="147683829684-1okssv36jctapmvsduqorik6065f6sb2.apps.googleusercontent.com">
+
+  <!-- GSI -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <style>
+    body {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      font-family:Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google widget loader -->
+  <div id="g_id_onload"
+       data-client_id="147683829684-1okssv36jctapmvsduqorik6065f6sb2.apps.googleusercontent.com"
+       data-callback="handleLogin">
+  </div>
+
+  <!-- Button -->
+  <div class="g_id_signin"
+       data-type="standard"
+       data-size="large"
+       data-width="300">
+  </div>
+
+  <script>
+    function handleLogin(response) {
+      console.log("Google login:", response);
+      window.location.href = "table.html";
+    }
+
+    window.onload = () => {
+      google.accounts.id.initialize({
+        client_id: "147683829684-1okssv36jctapmvsduqorik6065f6sb2.apps.googleusercontent.com",
+        callback: handleLogin
+      });
+
+      google.accounts.id.renderButton(
+        document.querySelector(".g_id_signin"),
+        { theme: "outline", size: "large" }
+      );
+    };
+  </script>
+
+</body>
+</html>
